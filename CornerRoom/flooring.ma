@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
 //Name: flooring.ma
-//Last modified: Tue, Sep 24, 2024 06:05:12 PM
+//Last modified: Tue, Oct 01, 2024 03:09:31 PM
 //Codeset: 1252
 requires maya "2025ff03";
 requires "stereoCamera" "10.0";
@@ -14,12 +14,12 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202407121012-8ed02f4c99";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22631)";
-fileInfo "UUID" "4A957AF7-4F81-62E7-4D3A-539CD28CB53B";
+fileInfo "UUID" "39DEB613-48EA-C7DB-F974-A38604A1DBF6";
 createNode transform -s -n "persp";
 	rename -uid "5888A5C9-49E9-DD37-1BD3-1B8851022ADF";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -13.523986286412276 11.694504111985426 16.287464177841731 ;
-	setAttr ".r" -type "double3" -28.80000000001796 -6158.0000000003338 2.0180909124149614e-15 ;
+	setAttr ".t" -type "double3" -16.513510064153188 11.260990674435712 13.778915132700035 ;
+	setAttr ".r" -type "double3" -27.600000000016284 -6168.8000000004586 0 ;
 	setAttr ".rpt" -type "double3" 2.5520125118509041e-17 1.0735387754936274e-16 1.8566404060727903e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "569D7B9F-4E50-00DD-A8B9-E3825FFD95DE";
@@ -13130,7 +13130,7 @@ createNode pointLight -n "WallLightShape1" -p "WallLight1";
 createNode transform -n "FlashLight";
 	rename -uid "784415F8-4E35-7397-6E8A-44A73E952EB1";
 	setAttr ".t" -type "double3" -0.70901180073979153 0.4743806644611106 0.70400688543627155 ;
-	setAttr ".r" -type "double3" 171.00724613917299 -26.684839383643592 180 ;
+	setAttr ".r" -type "double3" 171.00724613917302 -26.684839383643592 180 ;
 	setAttr ".s" -type "double3" 1.0000000000000002 0.99999999999999989 1.0000000000000002 ;
 	setAttr ".rp" -type "double3" 1.1102230246251568e-16 0 -5.5511151231257839e-17 ;
 	setAttr ".rpt" -type "double3" -1.8559698069976922e-16 -8.6769231714127832e-18 1.5435834605835148e-16 ;
@@ -13176,20 +13176,20 @@ createNode areaLight -n "FillLightShape" -p "FillLight";
 	setAttr ".cl" -type "float3" 0.42900002 0.49488395 1 ;
 	setAttr ".in" 2.4404761791229248;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "1D8808AF-4147-0332-2FD5-C6AAC4DE97C6";
+	rename -uid "4A744B2E-4FA6-BE72-7337-4FA5BD815465";
 	setAttr -s 18 ".lnk";
 	setAttr -s 18 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "3CCA4A9C-4DFA-78C7-3574-97BAF782993E";
+	rename -uid "40B4827C-41A3-04E9-3376-B28B206B5DC0";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "F38298C3-43CB-910F-DD55-B79011BE0A90";
+	rename -uid "CEB42690-4EE6-F61F-5245-8CB497A0A145";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "F6FCC908-4671-ACAA-2DB2-63806C8E01A6";
+	rename -uid "4E26B4FD-4E97-30AE-8DAF-2497C893C8C9";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "25F6D558-43A2-862E-B022-04B24AA0EA7F";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "2B722FF6-425B-10DE-E8BE-6F9BE2B8A844";
+	rename -uid "8A6889C3-4F79-BE7A-DCF8-839CB75AC4F4";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "20F01195-4F8D-325D-9514-04964AC4B826";
 	setAttr ".g" yes;
@@ -14775,8 +14775,6 @@ select -ne :hardwareRenderGlobals;
 	setAttr -k on ".bswa";
 	setAttr -k on ".shml";
 	setAttr -k on ".hwel";
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "polyMergeVert3.out" "ArchWallShape.i";
 connectAttr "deleteComponent1.og" "|FloorTiles|TileRow01|Tile01|TileShape1.i";
 connectAttr "groupParts1.og" "pCubeShape1.i";
